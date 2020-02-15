@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[[1,2,3],[4,5,6],[7,8,9]];
+        function Array(arr){
+            let arr_length=arr.join().split(',').length;//数组扁平化个数
+            let newarr=[];//新数组
+            let m=arr[0].length;//行3
+            let n=arr.length;//列3
+            let x=0,y=0;//指针
+            let endx=m-1,endy=n-1;
+                while(newarr.length<=arr_length){
+                    for(let i=y;i<=endy;i++){
+                        newarr.push(arr[x][i])
+                    }
+                    if(++x>endx){
+                        break;
+                    }
+                    for(let i=x;i<=endx;i++){
+                        newarr.push(arr[i][endy])
+                    }
+                    if(--endy<y){
+                        break;
+                    }
+                    for(let i=endy;i>=y;i--){
+                        newarr.push(arr[endx][i])
+                    }
+                    if(--endx<x){
+                        break;
+                    }
+                    for(let i=endx;i>=x;i--){
+                        newarr.push(arr[i][y])
+                    }
+                    if(++y>endy){
+                        break;
+                    }
+                }
+                
+                console.log(newarr)
+        }   
+        Array(arr)
+    </script>
+</body>
+</html>

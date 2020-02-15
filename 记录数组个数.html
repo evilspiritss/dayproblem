@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let str='dsadsa12345fsfaqq';
+    console.log(str)
+    let a=Array.from(new Set(str))//字符串转数组，去重,得到新数组
+    console.log(a);
+    for(let i=0;i<a.length;i++){
+        n=0;
+        for(let j=0;j<str.length;j++){
+            if(a[i]==str[j]){
+                n++;
+            }  
+        }
+        console.log(a[i]+'出现'+n+'次;')
+    }
+
+
+    
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a='1->2->4' ,b='1->3->5';
+        function newArray(a,b){
+            a=a.match(/[0-9]+/g).join('').split('');
+            b=b.match(/[0-9]+/g).join('').split('');
+            let arr=[];
+            let length=a.length>b.length?a.length:b.length;
+            for(let i=0;i<length;i++){
+                    arr.push(a[i]);
+                    arr.push(b[i]);
+            }
+            return arr.join('->')
+        }
+        console.log(newArray(a,b));  
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            N: 5,
+            lamp: [
+                [0, 0],
+                [4, 4]
+            ],
+            queries: [
+                [1, 1],
+                [1, 0]
+            ]
+        }
+
+        function juzhen(objs) {
+            let N = objs.N; //5
+            let k=0;
+            for (let i = 0; i < N; i++) {
+                for (let j = 0; j < N; j++) {
+                    if(k<objs.lamp.length){
+                        if (objs.lamp[k][0] == i && objs.lamp[k][1] == j) {
+                            document.write(1)
+                        } else {
+                        document.write(0)
+                        }
+                    }
+                }
+                document.write('<br/>')
+                
+            }k++;
+        }
+        juzhen(obj)
+    </script>
+</body>
+
+</html>

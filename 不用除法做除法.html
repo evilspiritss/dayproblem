@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let divisor=-1,dividend=-2147483648;
+        // if(dividend>0 && divisor>0){
+        //     let sum=0;
+        //     for(let i=divisor;i<=dividend;i=i+divisor){
+        //         sum++;
+        //     }
+        //     console.log(sum)
+        // }
+        // if(dividend<0 && divisor<0){
+        //     let sum=0;
+        //     for(let i=-divisor;i<=-dividend;i=i-divisor){
+        //         sum++;
+        //     }
+        //     console.log(sum)
+        // }
+        // if(dividend<0 && divisor>0){
+        //     dividend=-dividend;
+        //     let sum=0;
+        //     for(let i=divisor;i<=dividend;i=i+divisor){
+        //         sum++;
+        //     }
+        //     console.log('-'+sum)
+        // }
+        // if(dividend>0 && divisor<0){
+        //     divisor=-divisor;
+        //     let sum=0;
+        //     for(let i=divisor;i<=dividend;i=i+divisor){
+        //         sum++;
+        //     }
+        //     console.log('-'+sum)
+        // }
+        // if(dividend==0){
+        //     console.log(0)
+        // }
+        
+        
+        function divi(divisor,dividend){
+            if(dividend==0){
+                console.log(0)
+            }
+            if(divisor<0 || dividend<0){
+                if(divisor<0 && dividend<0){
+                    let sum=0;
+                    for(let i=-divisor;i<=-dividend;i=i-divisor){
+                        sum++;
+                    }
+                    console.log(sum)
+                }
+                else{
+                    divisor<0?divisor=-divisor:divisor;
+                    dividend<0?dividend=-dividend:dividend;
+                    let sum=0;
+                    for(let i=divisor;i<=dividend;i=i+divisor){
+                        sum++;
+                    }
+                    console.log('-'+sum)
+                }
+            }
+            else{
+                let sum=0;
+                    for(let i=divisor;i<=dividend;i=i+divisor){
+                        sum++;
+                    }
+                    console.log(sum) 
+            }
+            
+        }
+        divi(1,2)
+    </script>
+</body>
+</html>
