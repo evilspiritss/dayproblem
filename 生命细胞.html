@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #out{
+            width:300px;
+            height:400px;
+            background: pink;
+            
+        }
+        .one{width:100px;height:100px;float: left;}
+        .two{width:100px;height:100px;float: left;}
+        .three{width:100px;height:100px;float: left;}
+        .four{width:100px;height:100px;float: left;}
+        .five{width:100px;height:100px;float: left;}
+        .six{width:100px;height:100px;float: left;}
+        .seven{width:100px;height:100px;float: left;}
+        .eight{width:100px;height:100px;float: left;}
+        .nine{width:100px;height:100px;float: left;}
+        .ten{width:100px;height:100px;float: left;}
+        .eleven{width:100px;height:100px;float: left;}
+        .terife{width:100px;height:100px;float: left;}
+       
+    </style>
+</head>
+
+<body>
+    <div id="out">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+        <div class="five">5</div>
+        <div class="six">6</div>
+        <div class="seven">7</div>
+        <div class="eight">8</div>
+        <div class="nine">9</div>
+        <div class="ten">10</div>
+        <div class="eleven">11</div>
+        <div class="terife">12</div>
+       
+    </div>
+
+    <script>
+        let one=document.querySelector('.one')
+        let two=document.querySelector('.two')
+        let three=document.querySelector('.three')
+        let four=document.querySelector('.four')
+        let five=document.querySelector('.five')
+        let six=document.querySelector('.six')
+        let seven=document.querySelector('.seven')
+        let eight=document.querySelector('.eight')
+        let nine=document.querySelector('.nine')
+        let ten=document.querySelector('.ten')
+        let eleven=document.querySelector('.eleven')
+        let terife=document.querySelector('.terife')
+
+        let arrname=[
+                     [one,two,three],
+                     [four,five,six],
+                     [seven,eight,nine],
+                     [ten,eleven,terife]
+                    ];
+
+        let arr = [
+            [0, 0, 1],
+            [0, 1, 0],
+            [1, 0, 1],
+            [0, 1, 1]
+        ];
+            let m=arr.length;//行
+            let n=arr[0].length;//列
+
+            console.log(m,n)
+
+        function change(){
+            for(let i=0;i<m;i++){
+                for(let j=0;j<n;j++){
+                    if(arr[i][j]==1){
+                        arrname[i][j].style.background='red';
+                    }
+                    if(arr[i][j]!=1){
+                        arrname[i][j].style.background='green';
+                    }
+                }
+            }
+        }
+        
+        setInterval(function(){
+            life()
+            console.log(arr)
+        },1000)
+        function life(){
+            for(let i=0;i<m;i++){
+                for(let j=0;j<n;j++){
+                    if(j>0){
+                        if(arr[i][j-1]%2==1)//正上
+                        arr[i][j]+=2;
+                        if(i>0&&arr[i-1][j-1]%2==1)//左上
+                        arr[i][j]+=2;
+                        if(i<m-1&&arr[i+1][j-1]%2==1)
+                        arr[i][j]+=2;
+                    }
+                    if(j<n-1){
+                        if(arr[i][j+1]%2==1)
+                        arr[i][j]+=2;
+                        if(i>0&&arr[i-1][j+1]%2==1)
+                        arr[i][j]+=2;
+                        if(i<m-1&&arr[i+1][j+1])
+                        arr[i][j]+=2;
+                    }
+                    if(i>0&&arr[i-1][j]%2==1)
+                    arr[i][j]+=2;
+                    if(i<m-1&&arr[i+1][j]%2==1)
+                    arr[i][j]+=2;
+                }
+            }
+
+            for(let i=0;i<m;i++){
+                for(let j=0;j<n;j++){
+                    if(arr[i][j]>=5&&arr[i][j]<=7){
+                        arr[i][j]=1;
+                    }
+                    else{
+                        arr[i][j]=0;
+                    }
+                }
+            }
+            change()
+            return arr
+        }
+       
+    </script>
+</body>
+
+</html>
