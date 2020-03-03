@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var twoSum = function(nums, target) {
+    let num=nums.length;
+        for(let i=0;i<num-1;i++){
+            for(let j=i+1;j<num;j++){
+                if(nums[i]+nums[j]==target){
+                    console.log([i,j])
+                }
+            }
+        } 
+};
+ twoSum([2,7,11,13],9)
+//     let newarr=[]
+//     var twoSum = function(nums, target) {
+//         for(let i in nums){
+//             let num1=nums[i];
+//             let num2=target-num1;
+//             newarr.push(nums.indexOf(nums[i]))
+//             console.log(nums.indexOf('2'))
+//             console.log(nums['2'])
+//         }
+//         console.log(newarr) 
+//     };
+//  twoSum(['2','7',11,13],9)
+    </script>
+</body>
+</html>
